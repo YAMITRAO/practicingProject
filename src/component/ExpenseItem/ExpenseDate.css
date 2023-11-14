@@ -1,7 +1,6 @@
 .expenseDateContainer{
-    border-radius: 8px;
+
     background-color: rgba(238, 235, 235, 0.9);
-    padding: 10px;
     justify-content: center;
     align-items: center;
     font-weight: bold;

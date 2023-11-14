@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: row;
     width:90%;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     background-color: rgba(72, 91, 196, 0.3);
     justify-content: space-between;
     /* align-items: center; */
     margin: 10px auto;
-    padding: 10px 20px;
+    /* padding: 10px 10px; */
 }
 
 

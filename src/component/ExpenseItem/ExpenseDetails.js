@@ -1,7 +1,7 @@
 import "./ExpenseDetails.css";
 
 
-function ExpenseDetails(props){
+const ExpenseDetails = (props) => {
 
     return(
         <>
