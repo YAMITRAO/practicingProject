@@ -1,0 +1,11 @@
+.buttonCard{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding:5px 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color:white;
+    /* background-color: rgba(226, 89, 89, 0.7); */
+    margin-bottom: 5px;
+}

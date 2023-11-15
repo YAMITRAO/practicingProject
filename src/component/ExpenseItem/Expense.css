@@ -10,7 +10,14 @@
     /* padding: 10px 10px; */
 }
 
-
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px;
+}
 
 
 
