@@ -1,0 +1,38 @@
+.formConatiner{
+    background-color: rgba(28, 200, 57, 0.8);
+    width: 46%;
+    height: 280px
+}
+
+.commonInput{
+    display: flex;
+    justify-content: space-between;
+}
+
+.commonInput > label,input{
+    font-size: 22px;
+    font-family: monospace;
+    margin:5px;
+    /* background-color: red; */
+    padding:10px;
+}
+
+.commonInput > input {
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    width:250px;
+}
+
+
+.buttonDiv > input{
+    cursor: pointer;
+    background-color: rgb(250, 10, 20,0.8);
+    color:white;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.buttonDiv > input:hover{
+    scale: 1.01;
+    background-color: rgb(250, 10, 20,0.9);
+}

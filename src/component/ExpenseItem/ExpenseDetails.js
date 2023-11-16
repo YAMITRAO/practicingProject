@@ -12,20 +12,20 @@ const ExpenseDetails = (props) => {
     
     const nameUpdateFun = ( ) => {
         let updatedValue = prompt("Updated name ");
-        if(updatedValue.length > 0){
+        if(updatedValue){
             setName(updatedValue);
         }
         
     };
     const locationUpdateFun = () => {
         let updatedValue = prompt("Updated location");
-        if(updatedValue.length > 0){
+        if(updatedValue){
         setLocation(updatedValue);
         }
     };
     const rateUpdateFun = () => {
         let updatedValue = prompt("Updated rate value");
-        if(updatedValue.length > 0) {
+        if(updatedValue) {
         setRate(updatedValue);
         }
     }

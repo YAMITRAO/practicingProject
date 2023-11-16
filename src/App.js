@@ -1,5 +1,6 @@
 import './App.css';
 import Expense from './component/ExpenseItem/Expense';
+import ExpenseForm from './component/Expenseform/ExpenseForm';
 
 
 function App() {
@@ -11,8 +12,9 @@ function App() {
 
   return (
     <div className='mainContainer'>
-    { data.map( (data ) => {
-      return (<Expense itemName={data.itemName} itemDesc ={data.LocationOfExpenditure} itemDate = {data.itemDate} itemRate = {data.itemRate} />)
+      <ExpenseForm/>
+    { data.map( (data, index ) => {
+      return (<Expense key={index} itemName={data.itemName} itemDesc ={data.LocationOfExpenditure} itemDate = {data.itemDate} itemRate = {data.itemRate} />)
     })}
     </div>
     
