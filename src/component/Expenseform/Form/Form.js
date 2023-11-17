@@ -1,37 +1,81 @@
 import Card from "../../UI/Card";
 import "./Form.css"
+import { useState } from "react";
 
 const Form =() => {
+
+    const [userInput, setUserInput ] = useState( {
+        itemDate:"",
+        itemInput: "",
+        itemLocation: "",
+        itemRate: "",
+    })
+    // console.log(userInput);
+
+    const purchaseDateHandler = (e) => {
+        setUserInput({
+            ...userInput,
+            itemDate: e.target.value
+        });
+    }
+    const purchaseItemHandler = (e) => {
+        setUserInput({
+            ...userInput,
+            itemInput: e.target.value
+        });
+       
+    }
+    const purchaseLocationHandler = (e) => {
+        setUserInput({
+            ...userInput,
+            itemLocation: e.target.value
+        });
+        
+    }
+    const purchaseRateHandler = (e) => {
+        setUserInput({
+            ...userInput,
+            itemRate: e.target.value
+        });
+    }
+
+    const submitHandler =(e) => {
+        e.preventDefault();
+        console.log(userInput);
+    }
+
+
+
     return(
         <Card className="formConatiner">
-        <form>
+        <form onSubmit={ submitHandler}>
             {/* date */}
         <div className="commonInput itemDateDiv">
             <label >Purchase Date</label>
-            <input onChange={ (e) => console.log(e.target.value)} type="date" id="itemDate" name="itemDate" placeholder="Select purchase date" />
+            <input onChange={ purchaseDateHandler} type="date" id="itemDate" name="itemDate" placeholder="Select purchase date" />
            </div>
 
            {/* name */}
            <div className="commonInput itemNameDiv">
             <label >Item Name</label>
-            <input onChange={ (e) => console.log(e.target.value)} type="text" id="itemName" name="itemName" placeholder="Enter the Item name" />
+            <input onChange={ purchaseItemHandler} type="text" id="itemName" name="itemName" placeholder="Enter the Item name" />
            </div>
 
            {/* location */}
            <div className="commonInput itemLocationDiv">
             <label >Item Location</label>
-            <input onChange={ (e) => console.log(e.target.value)}  type="text" id="itemLocation" name="itemLocation" placeholder="purchase location" />
+            <input onChange={ purchaseLocationHandler}  type="text" id="itemLocation" name="itemLocation" placeholder="purchase location" />
            </div>
 
            {/* price */}
            <div className="commonInput itemRateDiv">
             <label >purchase Amount</label>
-            <input onChange={ (e) => console.log(e.target.value)} type="number" id="itemRate" name="itemRate" placeholder="Enter the purchase amount" />
+            <input onChange={ purchaseRateHandler } type="number" id="itemRate" name="itemRate" placeholder="Enter the purchase amount" />
            </div>
 
            <div className="commonInput buttonDiv">
            <input id="cancle" type="submit" value="cancel" />
-            <input id="submit" type="submit" value="submit" />
+            <input  id="submit" type="submit" value="submit" />
            </div>
            
         </form>
