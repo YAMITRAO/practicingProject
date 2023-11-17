@@ -4,18 +4,32 @@ import { useState } from "react";
 
 const Form =() => {
 
+   
+
     const [userInput, setUserInput ] = useState( {
         itemDate:"",
         itemInput: "",
         itemLocation: "",
         itemRate: "",
     })
+
+    let formData = {}
+    formData={...userInput};
     // console.log(userInput);
 
     const purchaseDateHandler = (e) => {
-        setUserInput({
-            ...userInput,
-            itemDate: e.target.value
+
+        // setUserInput({
+        //     ...userInput,
+        //     itemDate: e.target.value
+        // });
+
+        setUserInput( (prevState) => {
+            return {
+                // this approach is alternative of previous
+                ...prevState,
+                itemDate: e.target.value}
+            
         });
     }
     const purchaseItemHandler = (e) => {
@@ -41,7 +55,8 @@ const Form =() => {
 
     const submitHandler =(e) => {
         e.preventDefault();
-        console.log(userInput);
+        formData = {...userInput}
+        console.log(formData);
     }
 
 
