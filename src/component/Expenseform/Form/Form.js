@@ -2,7 +2,7 @@ import Card from "../../UI/Card";
 import "./Form.css"
 import { useState } from "react";
 
-const Form =() => {
+const Form =(props) => {
 
    
 
@@ -55,8 +55,15 @@ const Form =() => {
 
     const submitHandler =(e) => {
         e.preventDefault();
-        formData = {...userInput}
-        console.log(formData);
+        formData = {...userInput};
+        setUserInput({
+            itemDate:"",
+            itemInput:"",
+            itemLocation:"",
+            itemRate:"",
+        });
+        props.importDataFromForm(formData);
+        // console.log(formData);
     }
 
 
@@ -67,25 +74,25 @@ const Form =() => {
             {/* date */}
         <div className="commonInput itemDateDiv">
             <label >Purchase Date</label>
-            <input onChange={ purchaseDateHandler} type="date" id="itemDate" name="itemDate" placeholder="Select purchase date" />
+            <input onChange={ purchaseDateHandler} type="date" value={userInput.itemDate} id="itemDate" name="itemDate" placeholder="Select purchase date" />
            </div>
 
            {/* name */}
            <div className="commonInput itemNameDiv">
             <label >Item Name</label>
-            <input onChange={ purchaseItemHandler} type="text" id="itemName" name="itemName" placeholder="Enter the Item name" />
+            <input onChange={ purchaseItemHandler} type="text" value={userInput.itemInput} id="itemName" name="itemName" placeholder="Enter the Item name" />
            </div>
 
            {/* location */}
            <div className="commonInput itemLocationDiv">
             <label >Item Location</label>
-            <input onChange={ purchaseLocationHandler}  type="text" id="itemLocation" name="itemLocation" placeholder="purchase location" />
+            <input onChange={ purchaseLocationHandler}  type="text" value={userInput.itemLocation} id="itemLocation" name="itemLocation" placeholder="purchase location" />
            </div>
 
            {/* price */}
            <div className="commonInput itemRateDiv">
             <label >purchase Amount</label>
-            <input onChange={ purchaseRateHandler } type="number" id="itemRate" name="itemRate" placeholder="Enter the purchase amount" />
+            <input onChange={ purchaseRateHandler } type="number" value={userInput.itemRate} id="itemRate" name="itemRate" placeholder="Enter the purchase amount" />
            </div>
 
            <div className="commonInput buttonDiv">
