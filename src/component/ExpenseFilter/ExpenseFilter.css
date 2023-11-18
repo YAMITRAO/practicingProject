@@ -1,0 +1,28 @@
+
+.expenseFilter{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: right;
+    width: 88%;
+    height: 45px;
+    margin: 0px auto;
+   border-radius: 8px;
+   background-color: rgba(100,120,130,0.6);
+   padding:0 20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+}
+
+.expenseFilter > select{
+    height: 30px;
+    width: 100px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    padding:0 10px;
+    font-size: 18px;
+}
+

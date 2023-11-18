@@ -1,4 +1,5 @@
 import './App.css';
+import ExpenseFilter from './component/ExpenseFilter/ExpenseFilter';
 import Expense from './component/ExpenseItem/Expense';
 import ExpenseForm from './component/Expenseform/ExpenseForm';
 import { useState } from 'react';
@@ -12,29 +13,56 @@ function App() {
   ]
 
   const [data, setData] = useState(dataDummy);
+  const [updatedData, setUpdatedData] = useState(data)
+
+
+
   const importedData = (dataImported) => {
-    console.log(dataImported);
     let temp = {
       itemName: dataImported.itemInput,
       LocationOfExpenditure: dataImported.itemLocation,
       itemDate: new Date(dataImported.itemDate),
       itemRate: Number(dataImported.itemRate)
     }
-    console.log(dataDummy);
-    dataDummy.push(temp);
-    setData(dataDummy);
-    console.log(dataDummy);
+    if(temp.itemDate.getFullYear() && temp.itemName && temp.LocationOfExpenditure ){
+      setData((preState) => {
+        return [temp, ...preState]
+      }
+      );
+      setUpdatedData( (pre) => {
+        return [temp,...pre]
+      });
+    }
   }
 
+
+  const impoterdFromExpenseFilter = (dataImported) =>{
+    if(dataImported !== "All"){
+    let x = data.filter((value) => {
+      return (value.itemDate.getFullYear().toString() === dataImported)
+    })
+    setUpdatedData(x);
+  }
+  else{
+    setUpdatedData(data);
+  }
+  }
+
+  
+
+ 
   return (
+    <>
+    <ExpenseForm importedDataFromExpenseForm={importedData}/>
+      <ExpenseFilter importDataFromExpenseFilter ={impoterdFromExpenseFilter}/>
     <div className='mainContainer'>
-      <ExpenseForm importedDataFromExpenseForm={importedData}/>
-    { data.map( (data, index ) => {
-      return (<Expense key={index} itemName={data.itemName} itemDesc ={data.LocationOfExpenditure} itemDate = {data.itemDate} itemRate = {data.itemRate} />)
+    {   updatedData.map( (value, index ) => {
+        return (<Expense key={index} itemData = {value} />)
     })}
     </div>
+    </>
   );
-  
+
 }
 
 export default App;

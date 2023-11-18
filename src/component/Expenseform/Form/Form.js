@@ -65,9 +65,7 @@ const Form =(props) => {
         props.importDataFromForm(formData);
         // console.log(formData);
     }
-
-
-
+    
     return(
         <Card className="formConatiner">
         <form onSubmit={ submitHandler}>
