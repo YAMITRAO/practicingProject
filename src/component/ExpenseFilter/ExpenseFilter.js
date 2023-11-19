@@ -12,6 +12,7 @@ const ExpenseFilter =( props) => {
     return(
         <div className="expenseFilter">
             <div>Filter</div>
+            <div>Total Item: {props.dataLength}</div>
             <select onChange={ changeHandler }>
                 <option>All</option>
                 <option>2023</option>

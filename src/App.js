@@ -47,17 +47,14 @@ function App() {
     setUpdatedData(data);
   }
   }
-
-  
-
  
   return (
     <>
     <ExpenseForm importedDataFromExpenseForm={importedData}/>
-      <ExpenseFilter importDataFromExpenseFilter ={impoterdFromExpenseFilter}/>
+      <ExpenseFilter dataLength={updatedData.length} importDataFromExpenseFilter ={impoterdFromExpenseFilter}/>
     <div className='mainContainer'>
     {   updatedData.map( (value, index ) => {
-        return (<Expense key={index} itemData = {value} />)
+        return (<Expense key={Math.random()*0.234 + Math.random()} itemData = {value} />)
     })}
     </div>
     </>
