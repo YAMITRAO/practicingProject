@@ -65,6 +65,10 @@ const Form =(props) => {
         props.importDataFromForm(formData);
         // console.log(formData);
     }
+
+    const cancleButtonHandler = ( ) => {
+        props.visiblityData()
+    }
     
     return(
         <Card className="formConatiner">
@@ -94,7 +98,7 @@ const Form =(props) => {
            </div>
 
            <div className="commonInput buttonDiv">
-           <input id="cancle" type="submit" value="cancel" />
+           <input onClick={cancleButtonHandler} id="cancle" type="submit" value="cancel" />
             <input  id="submit" type="submit" value="submit" />
            </div>
            

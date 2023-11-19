@@ -27,12 +27,12 @@
 
 .buttonDiv > input{
     cursor: pointer;
-    background-color: rgb(250, 10, 20,0.8);
+    background-color: rgb(168, 48, 48);
     color:white;
     font-weight: bold;
     margin-top: 10px;
 }
 .buttonDiv > input:hover{
     scale: 1.01;
-    background-color: rgb(250, 10, 20,0.9);
+    background-color: rgb(168, 48, 48);
 }

@@ -7,3 +7,25 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.formVisibility{
+    background-color: rgba(28, 200, 57, 0.8);
+    width: 46%;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formVisibility > button {
+    width: 40%;
+    /* height:30px; */
+    padding:15px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgb(168, 48, 48);
+    font-size: 28px;
+    font-weight: bold;
+    color:white;
+}
