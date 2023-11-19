@@ -3,6 +3,7 @@ import ExpenseFilter from './component/ExpenseFilter/ExpenseFilter';
 import Expense from './component/ExpenseItem/Expense';
 import ExpenseForm from './component/Expenseform/ExpenseForm';
 import { useState } from 'react';
+import NodataCard from './component/UI/NodataCard';
 
 function App() {
 
@@ -47,15 +48,28 @@ function App() {
     setUpdatedData(data);
   }
   }
+  console.log(updatedData.length)
  
   return (
     <>
+    {/* <NodataCard>This is here</NodataCard> */}
     <ExpenseForm importedDataFromExpenseForm={importedData}/>
       <ExpenseFilter dataLength={updatedData.length} importDataFromExpenseFilter ={impoterdFromExpenseFilter}/>
     <div className='mainContainer'>
-    {   updatedData.map( (value, index ) => {
-        return (<Expense key={Math.random()*0.234 + Math.random()} itemData = {value} />)
-    })}
+      { updatedData.length === 0 && <NodataCard data="No Data Found"/>}
+      {
+        updatedData.length === 1 ?  updatedData.map( (value, index ) => {
+          return (<><Expense key={Math.random()*0.234 + Math.random()} itemData = {value} />
+          <NodataCard data="Add More Data"/>
+          </>
+          )
+      }) :  updatedData.map( (value, index ) => {
+          return (<><Expense key={Math.random()*0.234 + Math.random()} itemData = {value} />
+          </>
+          )
+      })
+      }
+      
     </div>
     </>
   );
